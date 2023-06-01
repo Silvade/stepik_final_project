@@ -9,7 +9,7 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        login_string = "login1"
+        login_string = "login"
         assert login_string in self.browser.current_url, f"URL is not contains string '{login_string}'"
 
     def should_be_login_form(self):
