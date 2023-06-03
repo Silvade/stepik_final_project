@@ -39,3 +39,11 @@ class ProductPage(BasePage):
         expected_message = f'Your basket total is now {product_price}'
         message_with_product_price = self.browser.find_element(*ProductPageLocators.MSG_WITH_BASKET_PRICE).text
         self.should_be_expected_message(message_with_product_price, expected_message)
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.MSG_WITH_PRODUCT_NAME), \
+            "Success message is presented, but should not be"
+
+    def should_be_disappeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.MSG_WITH_PRODUCT_NAME), \
+            "Success message is not disappeared, but should be"
