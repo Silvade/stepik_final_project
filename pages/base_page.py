@@ -66,3 +66,7 @@ class BasePage:
 
     def should_be_expected_message(self, message, expected_message):
         assert message == expected_message, f'Expected message: {expected_message}, but found: {message}'
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
