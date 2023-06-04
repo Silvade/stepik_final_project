@@ -14,5 +14,12 @@ class ProductPageLocators:
     PRODUCT_NAME = (By.CSS_SELECTOR, '.product_main h1')
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
 
+
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    GO_TO_BASKET = (By.CSS_SELECTOR, '.basket-mini>span>a')
+
+
+class BasketPageLocators:
+    BASKET_PRODUCTS = (By.CLASS_NAME, 'basket-items')
+    MSG_EMPTY_BASKET = (By.CSS_SELECTOR, '#content_inner>p')
