@@ -1,5 +1,5 @@
-from pages.base_page import BasePage
-from pages.locators import BasketPageLocators
+from .base_page import BasePage
+from .locators import BasketPageLocators
 
 
 class BasketPage(BasePage):
@@ -11,4 +11,5 @@ class BasketPage(BasePage):
         self.is_element_present(*BasketPageLocators.MSG_EMPTY_BASKET), 'Message about empty basket is not presented'
         expected_message = 'Your basket is empty.'
         message_empty_basket = self.browser.find_element(*BasketPageLocators.MSG_EMPTY_BASKET).text
-        assert expected_message in message_empty_basket, f'Expected that message: "{expected_message}" to be contained in: "{message_empty_basket}"'
+        assert expected_message in message_empty_basket, f'Expected that message: "{expected_message}" to be ' \
+                                                         f'contained in: "{message_empty_basket}"'
